@@ -1,0 +1,110 @@
+wait (2000)
+print("\n\t Starting Engine ..\r") 
+wait(2000)
+dim i as integer
+dim a as integer
+dim b as integer
+dim c as integer
+	i = 0
+	if (i = 56) then
+	print("SUCCESFUL.. \n\n\v")
+	
+    end if	
+   
+setcommand(_RWD, 0)
+wait (1000)
+
+top:
+
+     i= i+1
+	 a= a
+
+	 print("[",i, ". Second] \v")
+	
+	 if (i > 0) and ( i < 5 ) then
+	 
+	          b=b+50
+	   print("Current Speed: ", a," RPM/s", " - Acceleration to 200 RPM/s - \n\v")
+	       setcommand(_GO,2,b)
+		   a=b
+		  
+	
+	end if
+		      if ((i >= 5) and (i < 15)) then
+			 
+			   
+	          print("Current Speed: ", a," RPM/s", "  -- Stable to 200 RPM/s -- \n\v")
+	          setcommand(_GO, 2, 200)
+		      a=200
+		   
+    end if
+	          if ((i >= 15) and (i < 20)) then
+			      
+			  b=b+40
+	          print("Current Speed: ", a," RPM/s", "  -- Acceleration to 400 RPM/s -- \n\v") 
+	          setcommand(_GO, 2, b)
+		      a=b
+		  
+	
+	end if
+		      if ((i >= 20) and (i < 30)) then
+			 
+			   
+	          print("Current Speed: ", a," RPM/s", "  -- Stable to 400 RPM/s -- \n\v")
+	          setcommand(_GO, 2, 400)
+		      a=400
+			  
+	end if 
+	          if (i >= 30) and (i <  35) then
+			  
+			  b=b-80
+			  print("Current Speed: ", a," RPM/s", "  -- Decceleration to 0 RPM/s -- \n\v ")
+		      setcommand(_GO, 2 , b)
+			  a=b
+			  
+			  
+	
+	end if
+	          if ((i >=35) and ( i < 38 )) then
+			  
+			  print("Current Speed: ", a," RPM/s", "  -- Stable to 0 RPM/s -- \n\v ")
+	          setcommand(_GO, 2 ,0)
+		   	  a=0
+		   
+
+			 
+	end if		    
+		   
+	         if ((i >= 38 ) and (i < 45 )) then
+			 
+			 b=b-100
+			 print("Current Speed ", a," RPM/s", "  -- Acceleration to -700 RPM/s -- \n\v")  
+	         setcommand(_GO,2,b)
+			 a=b
+		 
+	end if
+	        if ((i >= 45 ) and ( i < 50 )) then
+		
+			print("Current Speed ", a," RPM/s", " -- Stable to -700 RPM/s -- \n\v") 	 
+			setcommand(_GO,2,-700)
+			a=b
+	
+    end if
+	        if ((i >= 50 ) and ( i <= 55 )) then
+		
+			b=b+140
+			print("Current Speed ", a," RPM/s", " -- Decceleration to 0 RPM/s -- \n\v") 	 
+			setcommand(_GO,2,b)
+			a=b				
+			
+			
+			
+end if 
+ if (i = 56 )then
+ wait(5000)
+	i=0
+	end if  
+           	
+wait (1000)	
+
+goto top	
